@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Año Bisiesto</title>
+<style>
+    body{
+        font-family: Arial;
+        background: linear-gradient(135deg,#74ebd5,#9face6);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .formulario{
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.2);
+        width:350px;
+        text-align:center;
+    }
+
+    h2{
+        color:#333;
+    }
+
+    input{
+        width:80%;
+        padding:10px;
+        margin:10px;
+        border-radius:10px;
+        border:1px solid #ccc;
+        font-size:18px;
+    }
+
+    button{
+        background:#4CAF50;
+        color:white;
+        border:none;
+        padding:10px 20px;
+        border-radius:10px;
+        cursor:pointer;
+        font-size:16px;
+    }
+
+    button:hover{
+        background:#45a049;
+    }
+
+    #resultado{
+        margin-top:20px;
+        font-size:20px;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="formulario">
+    <h2>📅 Año Bisiesto</h2>
+
+    <input type="number" id="anio" placeholder="Ingrese un año">
+
+    <br>
+
+    <button onclick="verificar()">Verificar</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+function verificar(){
+    let anio = parseInt(document.getElementById("anio").value);
+    let resultado = document.getElementById("resultado");
+
+    if((anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0)){
+        resultado.innerHTML = "✅ " + anio + " es año bisiesto";
+        resultado.style.color = "green";
+    }else{
+        resultado.innerHTML = "❌ " + anio + " no es año bisiesto";
+        resultado.style.color = "red";
+    }
+}
+</script>
+
+</body>
+</html>

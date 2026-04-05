@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+	<meta charset="UTF-8"> 
+	<title>Descuento por compra</title> 
+	<style> 
+	body{ 
+		font-family: Arial; background:#f2f2f2; } 
+		.contenedor{ 
+			width:350px; 
+			margin:auto; 
+			margin-top:50px; 
+			background:white; 
+			padding:20px; 
+			border-radius:15px; 
+			box-shadow:0 0 10px gray; 
+		} 
+        h2{text-align:center; } 
+        input{ width:90%; padding:8px; margin:8px 0; } 
+        button{ width:100%; padding:10px; } 
+        </style> 
+        </head> 
+        <body> 
+	<div class="contenedor"> 
+		<h2>Calcular descuento</h2> 
+		Ingrese monto de compra: <input type="number" id="monto"> 
+		<button onclick="descuento()">Calcular</button> 
+		<h3 id="resultado"></h3> 
+	</div> 
+	<script> 
+		function descuento() 
+		{ let monto = parseFloat(document.getElementById("monto").value); if (monto > 100) { let total = monto - (monto * 0.10); 
+		document.getElementById("resultado").innerHTML = "Descuento aplicado 10%<br>Total a pagar: " + total; 
+		document.getElementById("resultado").style.color = "blue";
+		 } else { 
+		document.getElementById("resultado").innerHTML = "Sin descuento<br>Total a pagar: " + monto; 
+		document.getElementById("resultado").style.color = "red"; 
+	} 
+} 
+</script> 
+</body> 
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Mayor de Edad</title> 
+</head> 
+<body> 
+	<h2>Determinar si una persona es mayor de edad</h2> 
+	<form> 
+		Ingrese edad: 
+		<input type="number" id="edad"><br><br> 
+		<input type="button" value="Verificar" onclick="verificar()"> 
+	</form> 
+	<h3 id="resultado"></h3> 
+	<script> function verificar() { 
+		let e = parseInt(document.getElementById("edad").value); 
+		if (e >= 18) { 
+		    document.getElementById("resultado").innerHTML = "Mayor de edad"; 
+	        document.getElementById("resultado").style.color = "blue"; 
+	    } else { 
+	        document.getElementById("resultado").innerHTML = "Menor de edad";document.getElementById("resultado").style.color = "red"; 
+	    } 
+	} 
+</script> 
+</body> 
+</html>

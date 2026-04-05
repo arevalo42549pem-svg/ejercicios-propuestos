@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+ <html lang="es">
+ <head> 
+  	<meta charset="UTF-8"> 
+  	<title>Mayor de tres números</title> 
+  </head> <body> <h2>Mostrar el mayor de tres números</h2> 
+  	<form>
+  	 Número 1: 
+  	 <input type="number" id="n1"><br><br> 
+  	 Número 2:
+  	 <input type="number" id="n2"><br><br> 
+  	 Número 3: 
+  	 <input type="number" id="n3"><br><br> 
+  	 <input type="button" value="Mostrar Mayor" onclick="mayor()"> 
+  	</form> 
+  	<h3 id="resultado"></h3> 
+  	<script> function mayor() { 
+  		let a = parseInt(document.getElementById("n1").value); 
+  		let b = parseInt(document.getElementById("n2").value); 
+  		let c = parseInt(document.getElementById("n3").value); 
+  		let mayor = Math.max(a,b,c); 
+  		document.getElementById("resultado").innerHTML = "El mayor es: " + mayor; 
+  		if (mayor >= 0) { 
+  		document.getElementById("resultado").style.color = "blue"; } else { 
+  		document.getElementById("resultado").style.color = "red"; } } 
+  	</script> 
+  </body> 
+  </html>

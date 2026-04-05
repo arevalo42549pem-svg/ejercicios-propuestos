@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Suma de dos números</title>
+</head>
+<body>
+
+<h2>Sumar dos números enteros</h2>
+
+<form>
+    <label>Número 1:</label>
+    <input type="number" id="num1"><br><br>
+
+    <label>Número 2:</label>
+    <input type="number" id="num2"><br><br>
+
+    <input type="button" value="Sumar" onclick="sumar()">
+</form>
+
+<h3 id="resultado"></h3>
+
+<script>
+function sumar() {
+    let a = parseInt(document.getElementById("num1").value);
+    let b = parseInt(document.getElementById("num2").value);
+    let suma = a + b;
+
+    document.getElementById("resultado").innerHTML = "Resultado: " + suma;
+}
+</script>
+
+</body>
+</html>

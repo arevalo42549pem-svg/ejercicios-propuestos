@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Día de la Semana</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg,#84fab0,#8fd3f4);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .contenedor{
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        width:380px;
+        text-align:center;
+        animation: aparecer 1s ease;
+    }
+
+    @keyframes aparecer{
+        from{opacity:0; transform:scale(0.8);}
+        to{opacity:1; transform:scale(1);}
+    }
+
+    h2{
+        color:#2d6a4f;
+    }
+
+    input{
+        width:85%;
+        padding:12px;
+        margin:10px;
+        border-radius:12px;
+        border:1px solid #ccc;
+        font-size:16px;
+    }
+
+    button{
+        background: linear-gradient(90deg,#43cea2,#185a9d);
+        color:white;
+        border:none;
+        padding:12px 25px;
+        border-radius:15px;
+        cursor:pointer;
+        font-size:16px;
+        font-weight:bold;
+    }
+
+    button:hover{
+        transform:scale(1.05);
+    }
+
+    #resultado{
+        margin-top:20px;
+        font-size:22px;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>📅 Día de la Semana</h2>
+
+    <input type="number" id="numero" placeholder="Ingrese número del 1 al 7">
+
+    <button onclick="mostrarDia()">Mostrar Día</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+function mostrarDia(){
+    let numero = parseInt(document.getElementById("numero").value);
+    let resultado = document.getElementById("resultado");
+    let dia = "";
+
+    if(isNaN(numero)){
+        resultado.innerHTML="⚠️ Ingrese un número";
+        resultado.style.color="red";
+        return;
+    }
+
+    switch(numero){
+        case 1: dia="Lunes"; break;
+        case 2: dia="Martes"; break;
+        case 3: dia="Miércoles"; break;
+        case 4: dia="Jueves"; break;
+        case 5: dia="Viernes"; break;
+        case 6: dia="Sábado"; break;
+        case 7: dia="Domingo"; break;
+        default: dia="Número inválido";
+    }
+
+    resultado.innerHTML="✅ " + dia;
+    resultado.style.color="blue";
+}
+</script>
+
+</body>
+</html>

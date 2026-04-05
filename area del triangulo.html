@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Área del Triángulo Animado</title>
+<style>
+    body{
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg,#74ebd5,#ACB6E5);
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+    }
+
+    .contenedor{
+        background:white;
+        padding:30px;
+        border-radius:20px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        width:400px;
+        text-align:center;
+        animation: aparecer 1s ease;
+    }
+
+    @keyframes aparecer{
+        from{
+            transform: scale(0.8);
+            opacity:0;
+        }
+        to{
+            transform: scale(1);
+            opacity:1;
+        }
+    }
+
+    h2{
+        color:#5a189a;
+    }
+
+    .figura{
+        position:relative;
+        width:150px;
+        height:130px;
+        margin:20px auto;
+    }
+
+    .triangulo{
+        width:0;
+        height:0;
+        border-left:75px solid transparent;
+        border-right:75px solid transparent;
+        border-bottom:130px solid #4cc9f0;
+    }
+
+    .base{
+        position:absolute;
+        bottom:-20px;
+        left:55px;
+        font-weight:bold;
+        color:#333;
+    }
+
+    .altura{
+        position:absolute;
+        left:-25px;
+        top:45px;
+        font-weight:bold;
+        color:#333;
+        transform: rotate(-90deg);
+    }
+
+    input{
+        width:85%;
+        padding:12px;
+        margin:8px;
+        border-radius:12px;
+        border:1px solid #ccc;
+        font-size:16px;
+    }
+
+    button{
+        background: linear-gradient(90deg,#ff758c,#ff7eb3);
+        color:white;
+        border:none;
+        padding:12px 25px;
+        border-radius:15px;
+        cursor:pointer;
+        font-size:16px;
+        font-weight:bold;
+        margin-top:10px;
+    }
+
+    button:hover{
+        transform:scale(1.05);
+    }
+
+    #resultado{
+        margin-top:20px;
+        font-size:20px;
+        font-weight:bold;
+    }
+</style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h2>📐 Área del Triángulo</h2>
+
+    <div class="figura">
+        <div class="triangulo"></div>
+        <div class="base">Base</div>
+        <div class="altura">Altura</div>
+    </div>
+
+    <input type="number" id="base" placeholder="Ingrese la base">
+    <input type="number" id="altura" placeholder="Ingrese la altura">
+
+    <button onclick="calcular()">Calcular Área</button>
+
+    <div id="resultado"></div>
+</div>
+
+<script>
+function calcular(){
+    let base = document.getElementById("base").value;
+    let altura = document.getElementById("altura").value;
+    let resultado = document.getElementById("resultado");
+
+    if(base=="" || altura==""){
+        resultado.innerHTML="⚠️ Complete todos los datos";
+        resultado.style.color="red";
+        return;
+    }
+
+    let area = (base*altura)/2;
+
+    resultado.innerHTML="✅ Área = " + area;
+    resultado.style.color="blue";
+}
+</script>
+
+</body>
+</html>
